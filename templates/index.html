@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calories Burnt Predictor</title>
+</head>
+<body>
+    <h2>Enter Your Workout Details</h2>
+    <form method="POST" action="/predict">
+        Gender (0=Male, 1=Female): 
+        <input type="number" name="gender" min="0" max="1" required><br><br>
+
+        Age: 
+        <input type="number" name="age" min="0" required><br><br>
+
+        Height (cm): 
+        <input type="number" name="height" step="any" min="0" required><br><br>
+
+        Weight (kg): 
+        <input type="number" name="weight" step="any" min="0" required><br><br>
+
+        Duration (min): 
+        <input type="number" name="duration" step="any" min="0" required><br><br>
+
+        Heart Rate: 
+        <input type="number" name="heart_rate" step="any" min="0" required><br><br>
+
+        Body Temp (°C): 
+        <input type="number" name="body_temp" step="any" min="0" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if result %}
+        <h3>Estimated Calories Burnt: {{ result }} cal</h3>
+    {% endif %}
+</body>
+</html>
